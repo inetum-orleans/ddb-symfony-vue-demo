@@ -16,11 +16,13 @@ git clone https://github.com/inetum-orleans/ddb-symfony-vue-demo.git
 ddb configure
 ```
 
-The first time, you will need to activate the project thanks to smartcd
+The first time, you will need to activate the project
 
 ```bash
-cd .
+$(ddb activate)
 ```
+
+(You could also use `cd .` and let the magic of smartcd activate the project for you, if you don't mind the warning that the project is not activated yet)
 
 ### Initialize the project
 
@@ -28,7 +30,7 @@ cd .
 make init
 ```
 
-This will build and run the docker containers, setup the database and install the dependencies.
+This will build and run the docker containers, setup the database and install the dependencies. Reply `yes` to the questions.
 
 ### Start the frontend project
 
