@@ -1,0 +1,24 @@
+###> inetum-orleans/docker-devbox ###
+/docker-compose.yml
+/*ddb.local.*
+/.bash_enter
+/.bash_leave
+/.bin/pg_dump
+/.bin/psql
+/.bin/composer
+/.bin/php
+/.docker/php/Dockerfile
+/.docker/postgres/Dockerfile
+/.docker/postgres/fixuid.tar.gz
+/.docker/php/fixuid.tar.gz
+/.docker/web/apache.conf
+/.docker/web/Dockerfile
+/.docker/node/Dockerfile
+/.docker/node/fixuid.tar.gz
+/.bin/node
+/.bin/npm
+/.bin/npx
+/.certs/demo-ddb.test.key
+/.certs/demo-ddb.test.crt
+/.certs/.signer.crt
+###< inetum-orleans/docker-devbox ###

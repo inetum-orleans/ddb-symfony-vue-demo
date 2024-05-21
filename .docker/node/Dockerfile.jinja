@@ -1,0 +1,12 @@
+FROM node:22
+
+RUN mkdir -p /project
+WORKDIR /project
+
+USER node
+
+RUN npm config set prefix /home/node/.npm-packages
+ENV PATH="${PATH}:/home/node/.npm-packages/bin"
+
+VOLUME /project
+VOLUME /home/node/.cache
