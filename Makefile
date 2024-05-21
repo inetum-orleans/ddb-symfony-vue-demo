@@ -1,4 +1,10 @@
-init: install init-db fill-db
+init: dc-build dc-up install init-db fill-db
+
+dc-build:
+	docker compose build
+
+dc-up:
+	docker compose up -d
 
 install: install-backend install-frontend
 
@@ -13,3 +19,6 @@ init-db:
 
 fill-db:
 	backend/bin/console doctrine:fixtures:load
+
+watch:
+	cd frontend && npm run dev
