@@ -3,3 +3,8 @@ cookiecutter:
     - template: gh:inetum-orleans/djp-node
       extra_context:
         node_version: "22"
+app:
+  db:
+    user: 'user'
+    password: 'password'
+    db: 'database'

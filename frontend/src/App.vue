@@ -6,7 +6,7 @@ const fortune = ref('')
 async function load() {
   const response = await fetch('/api/fortune')
   const data = await response.json()
-  fortune.value = data.fortune
+  fortune.value = data.message
 }
 
 load()
@@ -16,6 +16,7 @@ load()
   <div>
     {{ fortune }}
   </div>
+  <button @click="load">Refresh</button>
 </template>
 
 <style scoped></style>

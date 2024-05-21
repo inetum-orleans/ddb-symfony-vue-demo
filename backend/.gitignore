@@ -8,3 +8,7 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+###> inetum-orleans/docker-devbox ###
+/.env
+###< inetum-orleans/docker-devbox ###

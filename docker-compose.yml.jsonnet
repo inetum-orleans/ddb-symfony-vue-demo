@@ -4,6 +4,7 @@ local domain_ext = std.extVar('core.domain.ext');
 local domain_sub = std.extVar('core.domain.sub');
 
 local domain = std.join('.', [domain_sub, domain_ext]);
+local dbConnectionString = 'postgresql://' + std.extVar('app.db.user') + ':' + std.extVar('app.db.password') + '@db/' + std.extVar('app.db.db');
 
 ddb.Compose(
   ddb.with(
@@ -13,10 +14,14 @@ ddb.Compose(
   {
     services+: {
       db: ddb.Build('postgres') + ddb.User() +
-          ddb.Binary('psql', '/project', 'psql --dbname=postgresql://postgres:ddb@db/postgres') +
-          ddb.Binary('pg_dump', '/project', 'pg_dump --dbname=postgresql://postgres:ddb@db/postgres') +
+          ddb.Binary('psql', '/project', 'psql --dbname=' + dbConnectionString) +
+          ddb.Binary('pg_dump', '/project', 'pg_dump --dbname=' + dbConnectionString) +
           {
-            environment+: { POSTGRES_PASSWORD: 'ddb' },
+            environment+: {
+              POSTGRES_USER: std.extVar('app.db.user'),
+              POSTGRES_PASSWORD: std.extVar('app.db.password'),
+              POSTGRES_DB: std.extVar('app.db.db'),
+            },
             volumes+: [
               'db-data:/var/lib/postgresql/data',
               ddb.path.project + ':/project',
