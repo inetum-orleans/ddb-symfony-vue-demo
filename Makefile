@@ -15,10 +15,10 @@ install-frontend:
 	cd frontend && npm install
 
 init-db:
-	backend/bin/console doctrine:migration:migrate
+	backend/bin/console doctrine:migration:migrate -n
 
 fill-db:
-	backend/bin/console doctrine:fixtures:load
+	backend/bin/console doctrine:fixtures:load -n
 
 watch:
 	cd frontend && npm run dev

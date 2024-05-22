@@ -18,7 +18,7 @@
 /.bin/node
 /.bin/npm
 /.bin/npx
-/.certs/demo-ddb.test.key
-/.certs/demo-ddb.test.crt
 /.certs/.signer.crt
+/.certs/ddb-symfony-vue-demo.test.key
+/.certs/ddb-symfony-vue-demo.test.crt
 ###< inetum-orleans/docker-devbox ###

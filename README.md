@@ -1,6 +1,12 @@
 # symfony + vue + postgres ddb demo
 
-A demo project that uses ddb to show how easy it is to setup an environment
+A demo project that uses ddb to show how easy it is to setup an environment.
+
+This is a project using Symfony 7, Vue 3 and Postgres 16.
+
+If you had to install such project by hand, you would have to install PHP (and its correct set of extensions), Composer, Symfony, node.js, npm, vite, postgres, create the database, configure the database connection, etc...
+
+All of that is automatically handled by the devbox.
 
 ## Installation
 
@@ -30,7 +36,7 @@ $(ddb activate)
 make init
 ```
 
-This will build and run the docker containers, setup the database and install the dependencies. Reply `yes` to the questions.
+This will build and run the docker containers, setup the database and install the dependencies.
 
 ### Start the frontend project
 
