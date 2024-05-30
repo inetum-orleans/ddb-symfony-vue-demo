@@ -8,3 +8,6 @@ app:
     user: 'user'
     password: 'password'
     db: 'database'
+shell:
+  aliases:
+    dc: docker compose -f $DDB_CORE_PATH_PROJECT_HOME/docker-compose.yml
