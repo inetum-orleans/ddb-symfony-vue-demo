@@ -16,6 +16,7 @@ ddb.Compose(
       db: ddb.Build('postgres') + ddb.User() +
           ddb.Binary('psql', '/project', 'psql --dbname=' + dbConnectionString) +
           ddb.Binary('pg_dump', '/project', 'pg_dump --dbname=' + dbConnectionString) +
+          ddb.Expose('5432') +
           {
             environment+: {
               POSTGRES_USER: std.extVar('app.db.user'),
