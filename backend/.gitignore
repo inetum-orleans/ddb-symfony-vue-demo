@@ -12,3 +12,5 @@
 ###> inetum-orleans/docker-devbox ###
 /.env
 ###< inetum-orleans/docker-devbox ###
+
+.phpunit.result.cache
