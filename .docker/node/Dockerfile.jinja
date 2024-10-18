@@ -5,8 +5,9 @@ WORKDIR /project
 
 USER node
 
-RUN npm config set prefix /home/node/.npm-packages
+RUN npm config set prefix /home/node/.npm-packages && mkdir -p /home/node/.cache /home/node/.npm-packages
 ENV PATH="${PATH}:/home/node/.npm-packages/bin"
 
 VOLUME /project
 VOLUME /home/node/.cache
+VOLUME /home/node/.npm-packages
