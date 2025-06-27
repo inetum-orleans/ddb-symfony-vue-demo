@@ -1,12 +1,11 @@
 local ddb = import 'ddb.docker.libjsonnet';
 
-local domain = std.extVar('core.domain.value');
 local dbConnectionString = 'postgresql://' + std.extVar('app.db.user') + ':' + std.extVar('app.db.password') + '@db/' + std.extVar('app.db.db');
 
 ddb.Compose(
   ddb.with(
     import '.docker/node/djp.libjsonnet',
-    append=ddb.VirtualHost('5173', domain)
+    append=ddb.VirtualHost('5173', ddb.domain, 'front')
   ) +
   {
     services+: {
